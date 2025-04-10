@@ -3,14 +3,15 @@ import { ISvgProps } from '@interfaces/SVGProps';
 
 export default function iOSSvg(props: ISvgProps) {
   const {
-    height = 40,
-    width = 40,
+    height = 24,
+    width = 24,
     fill = 'none',
     color = '#000',
-    className,
     color2,
+    className,
     ...rest
   } = props;
+
   return (
     <svg
       className={clsx(color, color2, className)}

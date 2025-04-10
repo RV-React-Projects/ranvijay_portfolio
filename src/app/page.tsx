@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import LinkedIn from '@svgs/LinkedIn';
+import LinkedIn from '@svgs/LinkedInSvg';
 
 export default function Home() {
   return (

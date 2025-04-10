@@ -2,12 +2,14 @@
   "name": "rks_portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "clean": "rm -rf .next node_modules pnpm-lock.yaml .turbo .eslintcache node_modules/.cache dist out",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && yarn tsc"
+    "lint": "next lint && yarn tsc",
+    "generate:index": "node --import ./scripts/register-ts-node.mjs ./scripts/generate-index.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.4",

@@ -1,14 +1,14 @@
 import clsx from 'clsx';
 import { ISvgProps } from '@interfaces/SVGProps';
 
-export default function LinkedIn(props: ISvgProps) {
+export default function LinkedInSvg(props: ISvgProps) {
   const {
-    height = 40,
-    width = 40,
+    height = 24,
+    width = 24,
     fill = 'none',
     color = '#0077b5',
-    className,
     color2,
+    className,
     ...rest
   } = props;
 

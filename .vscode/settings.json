@@ -9,5 +9,14 @@
     "source.removeUnusedImports": "always"
   },
   "eslint.useFlatConfig": true,
-  "eslint.workingDirectories": ["./"]
+  "eslint.workingDirectories": ["./"],
+  "cSpell.words": [
+    "cmdk",
+    "embla",
+    "sonner",
+    "svgs",
+    "turbopack",
+    "vaul",
+    "ranvijay"
+  ]
 }
