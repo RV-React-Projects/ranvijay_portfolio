@@ -1,8 +1,8 @@
 {
-  "noImplicitAny": false,
+  "noImplicitAny": true,
   "moduleResolution": "node",
   "compilerOptions": {
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "target": "ES2017",
@@ -16,7 +16,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "baseUrl": "src",
     "paths": {
@@ -35,6 +35,13 @@
       "@utils/*": ["utils/*"],
       "@yup/*": ["yup/*"]
     },
+    "typeRoots": [
+      "node_modules/@types",
+      "src/types",
+      "declaration.d.ts",
+      "src/*.ts",
+      "src/*.tsx"
+    ],
     "plugins": [
       {
         "name": "next"

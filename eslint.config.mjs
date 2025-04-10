@@ -1,7 +1,6 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
-import importPlugin from 'eslint-plugin-import'; // ✅ important!
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -17,9 +16,6 @@ const eslintConfig = [
     'plugin:typescript-sort-keys/recommended',
   ),
   {
-    plugins: {
-      import: importPlugin, // ✅ make import/order work
-    },
     settings: {
       'import/resolver': {
         typescript: {
@@ -31,6 +27,9 @@ const eslintConfig = [
       'import/no-unresolved': [2, { caseSensitive: false }],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
+      'import/no-unresolved': [2, { caseSensitive: false }],
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
       'react/react-in-jsx-scope': 'off',
       'import/order': [
         'warn',
@@ -39,7 +38,7 @@ const eslintConfig = [
           pathGroups: [
             {
               pattern:
-                '@{redux,themes,assets,components,conf,hooks,navigation,storage,thunk,slice,screens,themes,colors,utils,models,app,network,common,services,context,constants}/**',
+                '@{redux,themes,assets,components,conf,hooks,navigation,storage,thunk,slice,screens,themes,colors,utils,interfaces,app,common,services,context,constants}/**',
               group: 'internal',
               position: 'before',
             },
@@ -56,29 +55,7 @@ const eslintConfig = [
           ],
           pathGroupsExcludedImportTypes: ['builtin'],
           'newlines-between': 'never',
-          alphabetize: {
-            order: 'asc',
-            caseInsensitive: true,
-          },
-        },
-      ],
-      'react/jsx-sort-props': [
-        'warn',
-        {
-          callbacksLast: true,
-          shorthandFirst: true,
-          noSortAlphabetically: false,
-          reservedFirst: true,
-        },
-      ],
-      'padding-line-between-statements': [
-        'warn',
-        { blankLine: 'always', prev: '*', next: 'return' },
-        { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
-        {
-          blankLine: 'any',
-          prev: ['const', 'let', 'var'],
-          next: ['const', 'let', 'var'],
+          alphabetize: { order: 'asc', caseInsensitive: true },
         },
       ],
     },

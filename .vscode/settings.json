@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["cmdk", "embla", "sonner", "svgs", "turbopack", "vaul"],
+  "eslint.enable": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.requireConfig": true,

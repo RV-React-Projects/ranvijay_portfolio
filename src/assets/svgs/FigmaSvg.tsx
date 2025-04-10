@@ -1,5 +1,5 @@
-import { ISvgProps } from '@interfaces/SVGProps';
 import clsx from 'clsx';
+import { ISvgProps } from '@interfaces/SVGProps';
 
 export default function FigmaSvg(props: ISvgProps) {
   const {
