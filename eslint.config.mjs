@@ -1,6 +1,7 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
+import importPlugin from 'eslint-plugin-import'; // ✅ important!
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,8 +11,22 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...compat.extends(
+    'next/core-web-vitals',
+    'next/typescript',
+    'plugin:typescript-sort-keys/recommended',
+  ),
   {
+    plugins: {
+      import: importPlugin, // ✅ make import/order work
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          project: './tsconfig.json',
+        },
+      },
+    },
     rules: {
       'import/no-unresolved': [2, { caseSensitive: false }],
       '@typescript-eslint/no-explicit-any': 'off',
@@ -41,7 +56,10 @@ const eslintConfig = [
           ],
           pathGroupsExcludedImportTypes: ['builtin'],
           'newlines-between': 'never',
-          alphabetize: { order: 'asc', caseInsensitive: true },
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
         },
       ],
       'react/jsx-sort-props': [
