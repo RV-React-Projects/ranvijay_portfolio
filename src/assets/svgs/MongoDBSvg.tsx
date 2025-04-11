@@ -3,8 +3,8 @@ import { ISvgProps } from '@interfaces/SVGProps';
 
 export default function MongoDBSvg(props: ISvgProps) {
   const {
-    height = 32,
-    width = 32,
+    height = 24,
+    width = 24,
     fill = 'none',
     color = '#599636',
     color2 = '#6cac48',

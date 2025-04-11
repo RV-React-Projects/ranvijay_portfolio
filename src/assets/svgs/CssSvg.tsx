@@ -3,8 +3,8 @@ import { ISvgProps } from '@interfaces/SVGProps';
 
 export default function CssSvg(props: ISvgProps) {
   const {
-    height = 32,
-    width = 32,
+    height = 24,
+    width = 24,
     fill = 'none',
     color = '#2299f8',
     color2 = '#fcfcfc',

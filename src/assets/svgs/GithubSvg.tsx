@@ -3,8 +3,8 @@ import { ISvgProps } from '@interfaces/SVGProps';
 
 export default function GithubSvg(props: ISvgProps) {
   const {
-    height = 32,
-    width = 32,
+    height = 24,
+    width = 24,
     fill = 'none',
     color = '#2088FF',
     color2,

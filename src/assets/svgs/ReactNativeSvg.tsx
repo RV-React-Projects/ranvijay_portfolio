@@ -3,8 +3,8 @@ import { ISvgProps } from '@interfaces/SVGProps';
 
 export default function ReactNativeSvg(props: ISvgProps) {
   const {
-    height = 32,
-    width = 32,
+    height = 24,
+    width = 24,
     fill = 'none',
     color = '#61dafb',
     color2,
