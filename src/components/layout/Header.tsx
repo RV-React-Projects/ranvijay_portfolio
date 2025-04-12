@@ -23,7 +23,7 @@ export default function Header() {
         <Link
           href="#"
           className="text-2xl font-bold text-black hover:text-gray-700 transition-colors duration-200 text-center">
-          &lt;RKS&gt;
+          ＜RKS＞
         </Link>
 
         <nav className="hidden md:flex space-x-6">

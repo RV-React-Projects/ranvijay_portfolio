@@ -14,8 +14,8 @@ import Header from '@components/layout/Header';
 // });
 
 export const metadata: Metadata = {
-  title: '<RKS> Portfolio',
-  description: 'its a portfolio of Ranvijay Kumar Singh',
+  title: 'Ranvijay Portfolio!',
+  description: 'Portfolio of Ranvijay Kumar Singh',
 };
 
 export default function RootLayout({
@@ -25,9 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body
-      // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <Header />
         <div className="min-h-screen">{children}</div>
         <Footer />
