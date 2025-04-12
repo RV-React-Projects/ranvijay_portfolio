@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="w-full text-center py-6 border-t border-gray-300 mt-10 bg-gray-900">
       <p className="text-sm text-gray-400">
-        © {currentYear} Ranvijay Kumar Singh. All rights reserved.
+        © {currentYear} Ranvijay Kumar Singh. All rights reserved!
       </p>
     </footer>
   );
