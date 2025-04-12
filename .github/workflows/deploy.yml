@@ -22,15 +22,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: 'yarn'
 
       - name: 📥 Install dependencies
-        run: pnpm install
+        run: yarn install
 
       - name: 🔧 Build project
         run: |
-          pnpm build
-          pnpm export
+          yarn build
+          yarn export
 
       - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
