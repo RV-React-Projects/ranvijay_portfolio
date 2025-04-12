@@ -1,7 +1,10 @@
-import type { Metadata } from 'next';
 import '@styles/globals.css';
+import { PropsWithChildren } from 'react';
+import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
+import AppProviders from 'AppProvider';
 
 // const geistSans = Geist({
 //   variable: '--font-geist-sans',
@@ -16,19 +19,24 @@ import Header from '@components/layout/Header';
 export const metadata: Metadata = {
   title: 'Ranvijay Portfolio!',
   description: 'Portfolio of Ranvijay Kumar Singh',
+  icons: { icon: '/favicon.svg' },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html suppressHydrationWarning lang="en">
       <body>
-        <Header />
-        <div className="min-h-screen">{children}</div>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange>
+          <AppProviders>
+            <Header />
+            <div className="min-h-screen mt-14">{children}</div>
+            <Footer />
+          </AppProviders>
+        </ThemeProvider>
       </body>
     </html>
   );
