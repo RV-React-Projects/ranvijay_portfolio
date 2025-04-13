@@ -3,6 +3,7 @@ export { default as AppStoreSvg } from './AppStoreSvg';
 export { default as BackEndSvg } from './BackEndSvg';
 export { default as CssSvg } from './CssSvg';
 export { default as DartSvg } from './DartSvg';
+export { default as ExpoSvg } from './ExpoSvg';
 export { default as FigmaSvg } from './FigmaSvg';
 export { default as FireBaseSvg } from './FireBaseSvg';
 export { default as FlutterSvg } from './FlutterSvg';

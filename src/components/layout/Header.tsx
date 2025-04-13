@@ -3,18 +3,8 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
+import { siteConfig } from '@configs/AppConfigs';
 import { ThemeToggle } from './ThemeToggle';
-
-const navLinks = [
-  // { id: '#', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  // { id: 'testimonials', label: 'Testimonials' },
-  // { id: 'faq', label: 'FAQ' },
-  { id: 'contact', label: 'Contact' },
-];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,8 +12,8 @@ export default function Header() {
   const isNotFound = segment === '/_not-found';
 
   return isNotFound ? null : (
-    <header className="fixed top-0 z-50 w-full bg-white dark:bg-gray-900 shadow-md dark:text-white text-black hover:text-black transition-colors duration-200">
-      <div className="mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-[5vw] w-full">
+    <header className="fixed top-0 z-50 w-full bg-white dark:bg-[#2C2C2C] shadow-md dark:text-white text-black hover:text-black transition-colors duration-200">
+      <div className="mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-[10%] w-full">
         <Link
           href="#"
           className="text-2xl font-bold  hover:text-gray-700 transition-colors duration-200 text-center">
@@ -31,7 +21,7 @@ export default function Header() {
         </Link>
         <div className="hidden md:flex">
           <nav className="md:flex space-x-6">
-            {navLinks.map(link => (
+            {siteConfig.navItems.map(link => (
               <Link key={link.id} href={`#${link.id}`} className="">
                 {link.label}
               </Link>
@@ -63,7 +53,7 @@ export default function Header() {
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 ease-in-out`}>
         <div className="flex flex-col items-center space-y-6  md:hidden px-4 pb-4 bg-white dark:bg-gray-900 z-10000">
-          {navLinks.map((link, index) => (
+          {siteConfig.navItems.map((link, index) => (
             <Link
               key={link.id}
               href={`#${link.id}`}

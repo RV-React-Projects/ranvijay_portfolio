@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function notfound() {
   return (
     <section>
-      <div className="bg-black text-white -mt-14 min-h-screen">
+      <div className="bg-black text-white min-h-screen">
         <div className="flex h-screen">
           <div className="m-auto text-center">
             <div>
