@@ -10,7 +10,7 @@ import AppProviders from 'AppProvider';
 export const metadata: Metadata = {
   title: 'Ranvijay Portfolio!',
   description: 'Portfolio of Ranvijay Kumar Singh',
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: 'favicon.svg' },
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {

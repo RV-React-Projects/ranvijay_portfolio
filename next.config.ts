@@ -26,14 +26,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   crossOrigin: 'anonymous',
   trailingSlash: true,
-  env: {
-    baseUrl,
-  },
-  typescript: {
-    ignoreBuildErrors: false,
-  },
+  env: { baseUrl },
+  typescript: { ignoreBuildErrors: false },
   images: {
     unoptimized: true,
+    loader: 'akamai',
     path: '/',
     remotePatterns: [
       {

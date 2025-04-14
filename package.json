@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint && yarn tsc",
-    "predeploy": "DEPLOY_TARGET=gh-pages NODE_ENV=production yarn build",
+    "predeploy": "DEPLOY_TARGET=gh-pages NODE_ENV=production next build",
     "deploy": "gh-pages -d out",
     "generate:index": "node --import ./scripts/register-ts-node.mjs ./scripts/generate-index.ts",
     "clean": "rm -rf .next node_modules yarn-lock.yaml .turbo .eslintcache node_modules/.cache dist out",

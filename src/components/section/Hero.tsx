@@ -54,7 +54,7 @@ export default function HeroSection() {
         {/* Right Image */}
         <div className="rounded-xl overflow-hidden shadow-xl">
           <Image
-            src="/user_profile.jpg" // Replace with actual image path
+            src="user_profile.jpg"
             alt="Ranvijay"
             width={400}
             height={400}

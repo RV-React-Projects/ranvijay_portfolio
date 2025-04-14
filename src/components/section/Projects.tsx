@@ -36,7 +36,7 @@ const projects = [
     title: 'E-commerce Platform',
     description:
       'A full-stack e-commerce solution with mobile apps and admin dashboard',
-    image: '/project.png',
+    image: 'project.png',
     tech: ['React', 'Node.js', 'MongoDB'],
     codeLink: '#',
     previewLink: '#',
@@ -45,7 +45,7 @@ const projects = [
     title: 'Healthcare App',
     description:
       'Telemedicine platform connecting patients with healthcare providers',
-    image: '/project.png',
+    image: 'project.png',
     tech: ['React', 'Firebase', 'TypeScript'],
     codeLink: '#',
     previewLink: '#',
@@ -53,7 +53,7 @@ const projects = [
   {
     title: 'Social Network',
     description: 'Modern social networking platform with real-time features',
-    image: '/project.png',
+    image: 'project.png',
     tech: ['Next.js', 'GraphQL', 'PostgreSQL'],
     codeLink: '#',
     previewLink: '#',
@@ -62,7 +62,7 @@ const projects = [
     title: 'Healthcare App',
     description:
       'Telemedicine platform connecting patients with healthcare providers',
-    image: '/project.png',
+    image: 'project.png',
     tech: ['React', 'Firebase', 'TypeScript'],
     codeLink: '#',
     previewLink: '#',
@@ -70,7 +70,7 @@ const projects = [
   {
     title: 'Social Network',
     description: 'Modern social networking platform with real-time features',
-    image: '/project.png',
+    image: 'project.png',
     tech: ['Next.js', 'GraphQL', 'PostgreSQL'],
     codeLink: '#',
     previewLink: '#',
