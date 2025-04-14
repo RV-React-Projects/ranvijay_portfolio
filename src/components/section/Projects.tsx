@@ -85,7 +85,7 @@ export default function ProjectSection() {
   );
 
   return (
-    <section className="site_spacing py-18">
+    <section id="projects" className="site_spacing py-18">
       <h2 className="text-3xl font-bold mb-6">Featured Projects</h2>
 
       <Input

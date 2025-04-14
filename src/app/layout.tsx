@@ -15,7 +15,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html suppressHydrationWarning lang="en" className={roboto.variable}>
+    <html
+      suppressHydrationWarning
+      lang="en"
+      className={`${roboto.variable} scroll-smooth`}>
       <body>
         <AppProviders>
           <ThemeProvider
