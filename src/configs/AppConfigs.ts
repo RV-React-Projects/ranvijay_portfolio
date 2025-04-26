@@ -11,7 +11,7 @@ export const siteConfig = {
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     // { id: 'testimonials', label: 'Testimonials' },
-    // { id: 'faq', label: 'FAQ' },
+    { id: 'FAQ', label: 'FAQ' },
     { id: 'contact', label: 'Contact' },
   ],
   navMenuItems: [{ label: 'Profile', href: '/profile' }],

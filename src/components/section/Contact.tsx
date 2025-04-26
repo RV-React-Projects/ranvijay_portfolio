@@ -1,5 +1,6 @@
-import { MailIcon, MapPinIcon, MessageCircle, PhoneIcon } from 'lucide-react';
+import { DribbbleIcon, MailIcon, MapPinIcon } from 'lucide-react';
 import Link from 'next/link';
+import { GithubSvg, LinkedInSvg } from '@assets/svgs';
 import { Button } from '@components/ui/button';
 import { Card, CardContent } from '@components/ui/card';
 import { Checkbox } from '@components/ui/checkbox';
@@ -9,73 +10,73 @@ import { Textarea } from '@components/ui/textarea';
 
 export default function ContactSection() {
   return (
-    <section
-      id="contact"
-      className="min-h-screen flex items-center justify-center py-16">
-      <div className="w-full max-w-screen-xl mx-auto px-6 xl:px-0">
-        <b className="text-muted-foreground">Contact Us</b>
-        <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">
-          Chat to our friendly team
-        </h2>
-        <p className="mt-3 text-base sm:text-lg">
-          We&apos;d love to hear from you. Please fill out this form or shoot us
-          an email.
-        </p>
-        <div className="mt-24 grid lg:grid-cols-2 gap-16 md:gap-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
-            <div>
-              <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
+    <section id="contact" className="flex items-center justify-center">
+      <div className="site_spacing w-full">
+        <div className="py-16 grid lg:grid-cols-2 gap-16 md:gap-10">
+          <div>
+            <div className="flex flex-col gap-y-5">
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight">
+                Contact
+              </h2>
+              <b>Let’s work together!</b>
+              <p className="mt-3 text-base sm:text-lg text-muted-foreground">
+                I’m always open to discussing exciting new projects, creative
+                collaborations, or any opportunity where I can contribute to
+                turning bold ideas into reality.
+                <br />
+                <br />
+                Whether you’re building something from scratch, refining an
+                existing concept, or just want to brainstorm possibilities, I’d
+                love to be part of your journey.
+                <br />
+                <br />
+                Let’s connect, share visions, and create something meaningful
+                together.
+                <br />
+                <br />
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-x-8 gap-y-6 py-5 pb-7">
+              <div>
+                <div className="flex flex-row items-center gap-x-3">
+                  <div className="h-8 w-8 flex items-center justify-center bg-primary/10 text-primary rounded-full">
+                    <MailIcon height={15} width={15} />
+                  </div>
+                  <h3 className="font-semibold text-xl">Email</h3>
+                </div>
+                <Link
+                  className="font-medium text-primary"
+                  href="mailto:ranvijaychouhan12@gmail.com">
+                  ranvijaychouhan12@gmail.com
+                </Link>
+              </div>
+              <div>
+                <div className="flex flex-row items-center gap-x-3">
+                  <div className="h-8 w-8 flex items-center justify-center bg-primary/10 text-primary rounded-full">
+                    <MapPinIcon height={15} width={15} />
+                  </div>
+                  <h3 className="font-semibold text-xl">Location</h3>
+                </div>
+                <Link
+                  className="font-medium text-primary"
+                  href="https://map.google.com"
+                  target="_blank">
+                  Bangalore, India.
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-row gap-3">
+              <Link href="">
+                <LinkedInSvg />
+              </Link>
+              <Link href="">
+                <GithubSvg />
+              </Link>
+              <Link href="">
+                <DribbbleIcon />
+              </Link>
+              <Link href="">
                 <MailIcon />
-              </div>
-              <h3 className="mt-6 font-semibold text-xl">Email</h3>
-              <p className="my-2.5 text-muted-foreground">
-                Our friendly team is here to help.
-              </p>
-              <Link
-                className="font-medium text-primary"
-                href="mailto:akashmoradiya3444@gmail.com">
-                akashmoradiya3444@gmail.com
-              </Link>
-            </div>
-            <div>
-              <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
-                <MessageCircle />
-              </div>
-              <h3 className="mt-6 font-semibold text-xl">Live chat</h3>
-              <p className="my-2.5 text-muted-foreground">
-                Our friendly team is here to help.
-              </p>
-              <Link className="font-medium text-primary" href="#">
-                Start new chat
-              </Link>
-            </div>
-            <div>
-              <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
-                <MapPinIcon />
-              </div>
-              <h3 className="mt-6 font-semibold text-xl">Office</h3>
-              <p className="my-2.5 text-muted-foreground">
-                Come say hello at our office HQ.
-              </p>
-              <Link
-                className="font-medium text-primary"
-                href="https://map.google.com"
-                target="_blank">
-                100 Smith Street Collingwood <br /> VIC 3066 AU
-              </Link>
-            </div>
-            <div>
-              <div className="h-12 w-12 flex items-center justify-center bg-primary/10 text-primary rounded-full">
-                <PhoneIcon />
-              </div>
-              <h3 className="mt-6 font-semibold text-xl">Phone</h3>
-              <p className="my-2.5 text-muted-foreground">
-                Mon-Fri from 8am to 5pm.
-              </p>
-              <Link
-                className="font-medium text-primary"
-                href="tel:akashmoradiya3444@gmail.com">
-                +1 (555) 000-0000
               </Link>
             </div>
           </div>
@@ -120,7 +121,7 @@ export default function ContactSection() {
                     />
                   </div>
                   <div className="col-span-2 flex items-center gap-2">
-                    <Checkbox id="acceptTerms" />
+                    <Checkbox id="acceptTerms" defaultChecked />
                     <Label htmlFor="acceptTerms">
                       You agree to our{' '}
                       <Link href="#" className="underline">

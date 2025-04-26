@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import Footer from '@components/layout/Footer';
-import Header from '@components/layout/Header';
+import NavBar from '@components/navbar/navbar';
 import { roboto } from '@configs/Fonts';
 import AppProviders from 'AppProvider';
 
@@ -26,7 +26,8 @@ export default function RootLayout({ children }: PropsWithChildren) {
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange>
-            <Header />
+            <NavBar />
+            {/* <Header /> */}
             <div className="min-h-screen">{children}</div>
             <Footer />
           </ThemeProvider>

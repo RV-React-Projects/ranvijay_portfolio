@@ -15,9 +15,9 @@ export default function Header() {
     <header className="fixed top-0 z-50 w-full bg-white dark:bg-[#2C2C2C] shadow-md dark:text-white text-black hover:text-black transition-colors duration-200">
       <div className="mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-[10%] w-full">
         <Link
-          href="#"
+          href="#home"
           className="text-2xl font-bold  hover:text-gray-700 transition-colors duration-200 text-center">
-          ＜RKS＞
+          ＜RV＞
         </Link>
         <div className="hidden md:flex">
           <nav className="md:flex space-x-6">
