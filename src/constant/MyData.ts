@@ -1,8 +1,8 @@
 import moment from 'moment';
 
-export const DATE_FORMATE = 'DD/MM/YYYY';
+export const DATE_FORMATE: string = 'DD-MMM-YYYY';
 
-export const START_DATE = '28/09/2021';
+export const START_DATE = '28-Sep-2021';
 export const START_DATE_FORMATE = moment(START_DATE, DATE_FORMATE);
 export const TODAY_DATE_FORMATE = moment().format(DATE_FORMATE);
 

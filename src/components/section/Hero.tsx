@@ -28,16 +28,24 @@ export default function HeroSection() {
               variant="p"
               affects="lead"
               className="text-gray-500 max-w-[80%] md:max-w-[90%] text-md self-center md:self-start text-left">
-              I specialize in building fast, scalable, and user-focused web and
-              mobile applications using React Native, React, and TypeScript.
+              I specialize in building fast, scalable, and user-focused mobile
+              and web applications using React Native, React, and TypeScript.
               <br />
-              <br />
-              Whether you&apos;re starting from scratch, scaling a product, or
+              <br />I transform complex ideas into high-impact digital products
+              — built for speed, scale, and stunning user experience. Let&apos;s
+              build something great together.
+              {/* Whether you&apos;re starting from scratch, scaling a product, or
               looking to refine your UI/UX — I&apos;m here to help bring your
-              vision to life.
+              vision to life. */}
             </Typography>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start">
+            <Button asChild variant="secondary" className=" hover:bg-gray-200">
+              <Link href="#contact" className="flex items-center gap-2">
+                <Mail size={18} />
+                Contact Me
+              </Link>
+            </Button>
             <Button
               asChild
               variant="default"
@@ -48,12 +56,6 @@ export default function HeroSection() {
                 className="flex items-center gap-2">
                 <Download size={18} />
                 Download CV
-              </Link>
-            </Button>
-            <Button asChild variant="secondary" className=" hover:bg-gray-200">
-              <Link href="#contact" className="flex items-center gap-2">
-                <Mail size={18} />
-                Contact Me
               </Link>
             </Button>
           </div>

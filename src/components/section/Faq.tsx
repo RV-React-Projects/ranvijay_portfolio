@@ -33,7 +33,7 @@ const faq = [
 ];
 export default function FaqSection() {
   return (
-    <div className="site_spacing bg-muted py-20">
+    <section id="FAQ" className="site_spacing bg-muted py-20">
       <div className="max-w-xl">
         <h2 className="text-4xl md:text-5xl !leading-[1.15] font-bold tracking-tight">
           Questions & Answers
@@ -52,6 +52,6 @@ export default function FaqSection() {
           ))}
         </Accordion>
       </div>
-    </div>
+    </section>
   );
 }
