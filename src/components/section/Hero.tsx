@@ -11,7 +11,10 @@ export default function HeroSection() {
         {/* Left Content */}
         <div className="flex-1 text-center md:text-left">
           <div className="flex flex-col gap-y-4 text-center md:text-left md:mt-0 sm:mt-10">
-            <Typography variant="p" affects="lead" className="text-gray-500">
+            <Typography
+              variant="p"
+              affects="lead"
+              className="text-gray-500 mt-28 md:mt-0">
               👋 Hello there!
             </Typography>
             <Typography
@@ -23,6 +26,11 @@ export default function HeroSection() {
                 I&apos;m
               </Typography>
               Ranvijay
+              <Typography
+                variant="p"
+                className="text-gray-400 text-2xl font-medium">
+                Kumar Singh
+              </Typography>
             </Typography>
             <Typography
               variant="p"
@@ -41,21 +49,20 @@ export default function HeroSection() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center md:justify-start">
             <Button asChild variant="secondary" className=" hover:bg-gray-200">
-              <Link href="#contact" className="flex items-center gap-2">
+              <Link
+                href="#contact"
+                className="flex items-center gap-2 hover:text-gray-900">
                 <Mail size={18} />
-                Contact Me
+                <Typography>Contact Me</Typography>
               </Link>
             </Button>
-            <Button
-              asChild
-              variant="default"
-              className="bg-gray-900 text-white hover:bg-gray-800">
+            <Button asChild variant="default">
               <Link
                 href="/Ranvijay-CV.pdf"
                 download
                 className="flex items-center gap-2">
                 <Download size={18} />
-                Download CV
+                <Typography>Download CV</Typography>
               </Link>
             </Button>
           </div>

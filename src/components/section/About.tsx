@@ -35,7 +35,7 @@ export default function AboutSection() {
       <div className="site_spacing flex flex-col lg:flex-row items-start justify-between gap-20">
         {/* LEFT - TEXT + TECH */}
         <div className="lg:w-1/2  gap-20">
-          <Typography variant="h2" className="mb-6">
+          <Typography variant="h2" className="mb-6 primary-color">
             About Me
           </Typography>
 
