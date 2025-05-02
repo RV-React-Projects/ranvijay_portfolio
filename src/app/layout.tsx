@@ -1,34 +1,37 @@
-import type { Metadata } from 'next';
 import '@styles/globals.css';
+import { PropsWithChildren } from 'react';
+import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import Footer from '@components/layout/Footer';
-import Header from '@components/layout/Header';
-
-// const geistSans = Geist({
-//   variable: '--font-geist-sans',
-//   subsets: ['latin'],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: '--font-geist-mono',
-//   subsets: ['latin'],
-// });
+import NavBar from '@components/navbar/navbar';
+import { roboto } from '@configs/Fonts';
+import AppProviders from 'AppProvider';
 
 export const metadata: Metadata = {
   title: 'Ranvijay Portfolio!',
   description: 'Portfolio of Ranvijay Kumar Singh',
+  icons: { icon: 'favicon.svg' },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html
+      suppressHydrationWarning
+      lang="en"
+      className={`${roboto.variable} scroll-smooth`}>
       <body>
-        <Header />
-        <div className="min-h-screen">{children}</div>
-        <Footer />
+        <AppProviders>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>
+            <NavBar />
+            {/* <Header /> */}
+            <div className="min-h-screen">{children}</div>
+            <Footer />
+          </ThemeProvider>
+        </AppProviders>
       </body>
     </html>
   );
