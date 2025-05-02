@@ -1,5 +1,9 @@
 import type { NextConfig } from 'next';
 
+const isGhPages = process.env.DEPLOY_TARGET === 'gh-pages';
+const isProd = process.env.NODE_ENV === 'production';
+const repo = 'ranvijay_portfolio';
+
 let baseUrl;
 
 switch (process.env.NEXT_PUBLIC_STAGE?.trim()) {
@@ -10,23 +14,24 @@ switch (process.env.NEXT_PUBLIC_STAGE?.trim()) {
     baseUrl = 'https://google.com/';
     break;
   case 'PROD':
-    baseUrl = 'hhttps://google.com/';
+    baseUrl = 'https://google.com/';
     break;
   default:
     baseUrl = 'https://google.com/';
     break;
 }
 
+/** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   crossOrigin: 'anonymous',
-  env: {
-    baseUrl,
-  },
-  typescript: {
-    ignoreBuildErrors: false,
-  },
+  trailingSlash: true,
+  env: { baseUrl },
+  typescript: { ignoreBuildErrors: false },
   images: {
+    unoptimized: true,
+    loader: 'akamai',
+    path: '/',
     remotePatterns: [
       {
         protocol: 'https',
@@ -34,6 +39,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  output: 'export',
+  basePath: isGhPages && isProd ? `/${repo}` : '',
+  assetPrefix: isGhPages && isProd ? `/${repo}/` : '',
 };
 
 export default nextConfig;
