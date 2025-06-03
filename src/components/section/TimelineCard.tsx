@@ -1,5 +1,6 @@
 'use client';
 
+import { cloneElement } from 'react';
 import { Globe } from 'lucide-react';
 import moment from 'moment';
 import Link from 'next/link';
@@ -51,7 +52,7 @@ export default function TimelineCard({
         <Link
           href={companyURL}
           target="_blank"
-          className="text-lg font-semibold text-green-600">
+          className="text-lg font-semibold text-primary">
           <p className="text-sm mb-1">
             {company} • {location}
           </p>
@@ -62,8 +63,8 @@ export default function TimelineCard({
           ))}
         </ul>
         <div className="mb-2">
-          <span className="font-medium text-sm text-muted-foreground">
-            Technologies:
+          <span className="font-medium text-sm text-green-600">
+            Technologies/Tools Used:
           </span>
           <div className="flex flex-wrap gap-2 mt-1">
             {technologies.map((tech, i) => (
@@ -76,7 +77,7 @@ export default function TimelineCard({
           </div>
         </div>
         <div>
-          <span className="font-medium text-sm text-muted-foreground">
+          <span className="font-medium text-sm text-green-600">
             Key Projects:
           </span>
           <div className="flex flex-wrap gap-2 mt-1">
@@ -89,9 +90,9 @@ export default function TimelineCard({
                 </span>
                 <div className="flex flex-row gap-2 ml-2">
                   {[
-                    { link: proj.ios, Icon: AppStoreSvg },
-                    { link: proj.android, Icon: PlayStoreSvg },
-                    { link: proj.web, Icon: Globe },
+                    { link: proj.ios, Icon: <AppStoreSvg /> },
+                    { link: proj.android, Icon: <PlayStoreSvg /> },
+                    { link: proj.web, Icon: <Globe color="#3458e9" /> },
                   ].map(
                     ({ link, Icon }, index) =>
                       link && (
@@ -100,7 +101,7 @@ export default function TimelineCard({
                           href={link}
                           className="group"
                           target="_blank">
-                          <Icon height={20} width={20} />
+                          {cloneElement(Icon, { height: 20, width: 20 })}
                         </Link>
                       ),
                   )}

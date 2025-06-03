@@ -5,7 +5,7 @@ import TimelineCard from './TimelineCard';
 
 export default function ExperienceSection() {
   const start = moment(START_DATE, DATE_FORMATE);
-  const end = moment();
+  const end = moment().subtract(3, 'month');
   const years = end.diff(start, 'years');
   start.add(years, 'years');
   const months = end.diff(start, 'months');

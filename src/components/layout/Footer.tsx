@@ -1,7 +1,9 @@
 'use client';
 import { Facebook, Instagram, Linkedin, Github, Newspaper } from 'lucide-react';
 import moment from 'moment';
+import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
+import { siteConfig } from '@configs/AppConfigs';
 
 export default function Footer() {
   const currentYear = moment().year();
@@ -9,8 +11,8 @@ export default function Footer() {
   const isNotFound = segment === '/_not-found';
 
   return isNotFound ? null : (
-    <footer className="bg-[#2C2C2C] text-[#CFCFCF] px-6 md:px-20 py-12 text-sm">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="site_spacing bg-[#2C2C2C] text-[#CFCFCF] py-12 text-sm">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* ABOUT ME */}
         <div>
           <h2 className="text-white text-sm font-semibold mb-4 tracking-wide">
@@ -33,36 +35,13 @@ export default function Footer() {
             NAVIGATION
           </h2>
           <ul className="space-y-2">
-            <li>
-              <a href="#" className="hover:text-white">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                Skills
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                Experience
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                Works
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-white">
-                Contact
-              </a>
-            </li>
+            {siteConfig.navItems.map(link => (
+              <li key={link.id}>
+                <Link href={`#${link.id}`} className="hover:text-white">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -128,16 +107,10 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-10 border-t border-[#444] pt-6 text-center text-xs text-[#888]">
-        Made with ❤️ love by{'  '}
+        Made with ❤️ by{'  '}
         <span className="text-white font-semibold"> Ranvijay</span>{' '}
         &nbsp;|&nbsp; Copyright © {currentYear}
       </div>
     </footer>
-
-    // <footer classNameName="w-full text-center py-6 border-t border-gray-300 bg-gray-900">
-    //   <p classNameName="text-sm text-gray-400">
-    //     © {currentYear} Ranvijay Kumar Singh. All rights reserved!
-    //   </p>
-    // </footer>
   );
 }

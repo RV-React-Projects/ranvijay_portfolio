@@ -174,7 +174,7 @@ const faq: FaqItem[] = [
 export default function FaqSection() {
   return (
     <section id="FAQ" className="site_spacing bg-muted py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto">
         <h2 className="text-4xl md:text-5xl !leading-[1.15] font-bold tracking-tight text-foreground">
           Questions & Answers
         </h2>
@@ -183,11 +183,14 @@ export default function FaqSection() {
           className="w-full mx-auto mt-6"
           defaultValue="question-0">
           {faq.map(({ question, answer }, index) => (
-            <AccordionItem key={question} value={`question-${index}`}>
-              <AccordionTrigger className="text-left text-lg text-foreground">
+            <AccordionItem
+              key={question}
+              value={`question-${index}`}
+              className="">
+              <AccordionTrigger className="text-left text-xl text-foreground">
                 {question}
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="lg:pl-10 pl-6 bg-background p-10">
                 <div className="text-base leading-relaxed">{answer}</div>
               </AccordionContent>
             </AccordionItem>

@@ -14,7 +14,7 @@ export interface IExperienceItem {
 export const experienceData: IExperienceItem[] = [
   {
     title: 'React Native Developer (Software Developer',
-    company: 'DXFutureTech',
+    company: 'DXFutureTech 🔗',
     companyURL: 'https://www.dxfuturetech.com/',
     location: 'Bengaluru, Karnataka',
     isCurrent: true,
@@ -42,22 +42,21 @@ export const experienceData: IExperienceItem[] = [
       'Github',
       'AwsAmplify',
       'FireBase',
+      'NextJS',
+      'TailwindCSS',
+      'ShadCN',
+      'Git CI/CD',
+      'GitHub Actions',
     ],
     projects: [
-      {
-        title: 'Premier Sports Academy',
-      },
-      {
-        title: 'Druce',
-      },
-      {
-        title: 'Samana',
-      },
+      { title: 'Premier Sports Academy' },
+      { title: 'Druce' },
+      { title: 'Samana' },
     ],
   },
   {
     title: 'Software Developer (Front End Developer)',
-    company: 'Transport Simple',
+    company: 'Transport Simple 🔗',
     companyURL: 'https://www.transportsimple.com/',
     location: 'Bengaluru, Karnataka',
     isCurrent: false,
@@ -82,8 +81,6 @@ export const experienceData: IExperienceItem[] = [
       'Figma',
       'Git',
       'Github',
-      'AwsAmplify',
-      'FireBase',
     ],
     projects: [
       {
@@ -95,7 +92,7 @@ export const experienceData: IExperienceItem[] = [
   },
   {
     title: 'Software Developer',
-    company: 'Presto Apps',
+    company: 'Presto Apps 🔗',
     companyURL: 'https://www.presto-apps.com/',
     location: 'Bengaluru, Karnataka',
     isCurrent: false,
@@ -121,6 +118,7 @@ export const experienceData: IExperienceItem[] = [
       'Github',
       'AwsAmplify',
       'FireBase',
+      'NextJs',
     ],
     projects: [
       {
