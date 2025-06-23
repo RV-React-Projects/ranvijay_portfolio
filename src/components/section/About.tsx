@@ -13,6 +13,12 @@ import {
 } from '@assets/svgs';
 import { Card, CardContent } from '@components/ui/card';
 import { Typography } from '@components/ui/typography';
+import {
+  TOTAL_CLIENTS,
+  TOTAL_COMPANIES,
+  TOTAL_EXPERIENCE,
+  TOTAL_PROJECTS,
+} from '@constant/MyData';
 
 export const skillsData = [
   { label: 'React Native', Svg: ReactSvg },
@@ -41,8 +47,8 @@ export default function AboutSection() {
 
           <Typography variant="p" className="mb-4 text-lg">
             I&apos;m a passionate <b>Mobile & Web Developer</b> with over{' '}
-            <b>3 years of experience</b> building clean, scalable, and
-            high-performance applications. I’ve worked with startups and
+            <b>{TOTAL_EXPERIENCE} of experience</b> building clean, scalable,
+            and high-performance applications. I’ve worked with startups and
             enterprises, delivering products that users love.
           </Typography>
 
@@ -70,10 +76,10 @@ export default function AboutSection() {
         {/* RIGHT - STATS CARDS */}
         <div className="grid grid-cols-2 gap-4 w-full lg:w-[40%]">
           {[
-            { count: '30+', label: 'Projects Completed' },
-            { count: '15+', label: 'Happy Clients' },
-            { count: '3+', label: 'Years Experience' },
-            { count: '5+', label: 'Companies Worked' },
+            { count: TOTAL_PROJECTS + ' +', label: 'Projects Completed' },
+            { count: TOTAL_CLIENTS + ' +', label: 'Happy Clients' },
+            { count: TOTAL_EXPERIENCE, label: 'Years of Experience' },
+            { count: TOTAL_COMPANIES, label: 'Companies Worked' },
           ].map(stat => (
             <Card key={stat.label} className="rounded-xl shadow-md">
               <CardContent className="p-6">

@@ -52,10 +52,9 @@ export default function TimelineCard({
         <Link
           href={companyURL}
           target="_blank"
-          className="text-lg font-semibold text-primary">
-          <p className="text-sm mb-1">
-            {company} • {location}
-          </p>
+          className="text-lg font-semibold text-primary mb-1 flex flex-row">
+          <p className="text-sm">{company}</p>
+          <p className="text-sm text-foreground"> • {location}</p>
         </Link>
         <ul className="list-disc list-inside text-sm space-y-1 mb-3">
           {responsibilities.map((point, i) => (
