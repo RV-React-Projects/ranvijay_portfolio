@@ -162,3 +162,13 @@
 section {
   scroll-margin-top: 60px; /* For keyboard or hash navigation */
 }
+
+/* Glassmorphism utility */
+.glass {
+  @apply bg-white/50 dark:bg-white/10 backdrop-blur-xl border border-white/40 dark:border-white/15 shadow-lg;
+}
+
+/* macOS style glass navbar */
+.glass-nav {
+  @apply bg-white/60 dark:bg-white/10 backdrop-blur-lg border border-white/40 dark:border-white/10 shadow-md;
+}
