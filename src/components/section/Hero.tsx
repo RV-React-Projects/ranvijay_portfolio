@@ -1,4 +1,5 @@
 import { Download, Mail } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@components/ui/button';
 
@@ -50,13 +51,13 @@ export default function HeroSection() {
         </div>
         {/* Right Image */}
         <div className="rounded-xl overflow-hidden shadow-xl">
-          {/* <Image
+          <Image
             src="user_profile.jpg"
             alt="Ranvijay"
             width={400}
-            height={400}
+            height={450}
             className="object-cover w-full h-full"
-          /> */}
+          />
         </div>
         {/* <div className="flex-1 text-center md:text-left">
           <div className="flex flex-col gap-y-6 text-center md:text-left md:mt-0 sm:mt-10">
