@@ -10,6 +10,17 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    ignores: [
+      '**/node_modules/**',
+      '.next/**',
+      'out/**',
+      'dist/**',
+      'public/**',
+      '**/*.config.js',
+      '**/*.config.mjs',
+    ],
+  },
   ...compat.extends(
     'next/core-web-vitals',
     'next/typescript',
@@ -24,9 +35,6 @@ const eslintConfig = [
       },
     },
     rules: {
-      'import/no-unresolved': [2, { caseSensitive: false }],
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unused-vars': 'off',
       'import/no-unresolved': [2, { caseSensitive: false }],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
