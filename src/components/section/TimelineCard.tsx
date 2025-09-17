@@ -20,18 +20,23 @@ export default function TimelineCard({
   isCurrent,
   companyURL,
 }: IExperienceItem) {
-  const start = moment(startDate);
-  const end = endDate ? moment(endDate) : moment();
+  const start = moment(startDate, DATE_FORMATE, true);
+  const end = endDate ? moment(endDate, DATE_FORMATE, true) : moment();
 
-  // These are still needed for display!
-  const formattedStartDate = start.format(DATE_FORMATE);
-  const formattedEndDate = end.format(DATE_FORMATE);
+  const validStart = start.isValid() ? start.clone() : moment(startDate);
+  const validEnd = end.isValid()
+    ? end.clone()
+    : endDate
+      ? moment(endDate)
+      : moment();
 
-  // Now calculating duration
-  const years = end.diff(start, 'years');
-  start.add(years, 'years');
+  const formattedStartDate = validStart.format(DATE_FORMATE);
+  const formattedEndDate = validEnd.format(DATE_FORMATE);
 
-  const months = end.diff(start, 'months');
+  const years = validEnd.diff(validStart, 'years');
+  const startForCalc = validStart.clone().add(years, 'years');
+
+  const months = validEnd.diff(startForCalc, 'months');
 
   const parts = [];
   if (years) parts.push(`${years} Year${years > 1 ? 's' : ''}`);

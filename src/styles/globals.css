@@ -306,44 +306,35 @@ section {
 
 .bubble {
   @apply rounded-full backdrop-blur-2xl;
-  background:
-    radial-gradient(
-      160% 160% at 30% 25%,
-      rgba(255, 255, 255, 0.92) 0%,
-      rgba(255, 255, 255, 0.24) 70%
-    ),
-    radial-gradient(
-      140% 140% at 70% 70%,
-      rgba(255, 255, 255, 0.18) 0%,
-      rgba(255, 255, 255, 0.02) 70%
-    );
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  /* Clear, glassy bubble: transparent core with a soft specular highlight */
+  background: radial-gradient(
+    120% 120% at 26% 22%,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.2) 18%,
+    rgba(255, 255, 255, 0) 42%
+  );
   box-shadow:
-    inset 0 1px 6px rgba(255, 255, 255, 0.35),
-    0 12px 40px rgba(0, 0, 0, 0.14);
-  animation: bubbleFloat 12s ease-in-out infinite;
-  opacity: 0.75;
+    inset 0 1px 3px rgba(255, 255, 255, 0.12),
+    0 10px 28px rgba(0, 0, 0, 0.1);
+  animation: bubbleFloat 16s ease-in-out infinite;
+  opacity: 0.58;
   will-change: transform;
 }
 
 .dark .bubble {
-  background:
-    radial-gradient(
-      160% 160% at 30% 25%,
-      rgba(255, 255, 255, 0.32) 0%,
-      rgba(255, 255, 255, 0.1) 70%
-    ),
-    radial-gradient(
-      140% 140% at 70% 70%,
-      rgba(255, 255, 255, 0.14) 0%,
-      rgba(255, 255, 255, 0.02) 70%
-    );
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: radial-gradient(
+    120% 120% at 26% 22%,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.14) 18%,
+    rgba(255, 255, 255, 0) 42%
+  );
   box-shadow:
-    inset 0 1px 6px rgba(255, 255, 255, 0.22),
-    0 16px 44px rgba(0, 0, 0, 0.4);
-  opacity: 0.6;
+    inset 0 1px 3px rgba(255, 255, 255, 0.1),
+    0 14px 34px rgba(0, 0, 0, 0.32);
+  opacity: 0.52;
 }
+
+/* removed moving glint and ring for pure water look */
 
 /* Speed tiers for depth */
 .bubble--slow {

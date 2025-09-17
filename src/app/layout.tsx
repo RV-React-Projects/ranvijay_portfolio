@@ -55,7 +55,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
             enableSystem
             disableTransitionOnChange>
             <NavBar />
-            <GlassyBubbles count={12} />
+            <GlassyBubbles count={10} />
             {/* <Header /> */}
             <div className="min-h-screen">{children}</div>
             <Toaster position="top-right" richColors closeButton />
