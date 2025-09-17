@@ -31,11 +31,12 @@ jobs:
       - name: 🛠 Set deploy environment variable
         run: echo "DEPLOY_TARGET=gh-pages" >> $GITHUB_ENV
 
-      - name: 🔧 Build and prepare for deployment
-        run: yarn predeploy # Use the predeploy script which builds the project
+      - name: 🔧 Build project
+        run: yarn predeploy # runs next build with proper env vars
 
       - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
+          force_orphan: true # ✅ avoids git conflicts entirely
