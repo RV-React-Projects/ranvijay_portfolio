@@ -1,11 +1,10 @@
 import { Download, Mail } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@components/ui/button';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="site_spacing min-h-screen w-full flex py-12">
+    <section id="home" className="site_spacing min-h-screen w-full flex">
       <div className="w-full flex flex-col justify-between md:flex-row items-center gap-12 transition-colors duration-300">
         {/* Left Content */}
         <div className="flex-1 text-center md:text-left space-y-6">
@@ -51,13 +50,13 @@ export default function HeroSection() {
         </div>
         {/* Right Image */}
         <div className="rounded-xl overflow-hidden shadow-xl">
-          <Image
+          {/* <Image
             src="user_profile.jpg"
             alt="Ranvijay"
             width={400}
             height={400}
             className="object-cover w-full h-full"
-          />
+          /> */}
         </div>
         {/* <div className="flex-1 text-center md:text-left">
           <div className="flex flex-col gap-y-6 text-center md:text-left md:mt-0 sm:mt-10">

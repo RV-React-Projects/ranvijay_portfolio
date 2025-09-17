@@ -81,7 +81,7 @@ export default function AboutSection() {
             { count: TOTAL_EXPERIENCE, label: 'Years of Experience' },
             { count: TOTAL_COMPANIES, label: 'Companies Worked' },
           ].map(stat => (
-            <Card key={stat.label} className="rounded-xl shadow-md">
+            <Card key={stat.label} className="glass-card rounded-xl bg-muted">
               <CardContent className="p-6">
                 <p className="text-2xl font-bold">{stat.count}</p>
                 <p className="text-sm text-muted-foreground mt-1">

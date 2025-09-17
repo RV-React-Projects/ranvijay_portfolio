@@ -85,7 +85,7 @@ export default function ProjectSection() {
   );
 
   return (
-    <section id="projects" className="site_spacing py-18">
+    <section id="projects" className="site_spacing py-18 reveal-up">
       <h2 className="text-3xl font-bold mb-6">Featured Projects</h2>
 
       <Input
@@ -99,7 +99,7 @@ export default function ProjectSection() {
         {filteredProjects.map((project, idx) => (
           <Card
             key={idx}
-            className="flex flex-col overflow-hidden rounded-2xl shadow-md py-0">
+            className="glass-card flex flex-col overflow-hidden rounded-2xl py-0">
             <div className="relative w-full h-52">
               <Image
                 src={project.image}

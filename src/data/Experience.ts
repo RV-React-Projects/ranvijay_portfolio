@@ -65,7 +65,7 @@ export const experienceData: IExperienceItem[] = [
     companyURL: 'https://www.transportsimple.com/',
     location: 'Bengaluru, Karnataka',
     isCurrent: false,
-    startDate: '28-Nov-2022',
+    startDate: '8-Dec-2022',
     endDate: '14-Sep-2023',
     responsibilities: [
       'Designed and implemented app infrastructure from scratch, ensuring scalability, modularity, and maintainability.',
@@ -105,8 +105,8 @@ export const experienceData: IExperienceItem[] = [
     companyURL: 'https://www.presto-apps.com/',
     location: 'Bengaluru, Karnataka',
     isCurrent: false,
-    startDate: '28-Sep-2021',
-    endDate: '25-Dec-2022',
+    startDate: '27-Sep-2021',
+    endDate: '8-Dec-2022',
     responsibilities: [
       'Led development of cross-platform mobile applications using React Native',
       'Managed multiple live projects, ensuring smooth and timely production releases.',

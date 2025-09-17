@@ -173,26 +173,107 @@ section {
   @apply fixed overflow-hidden backdrop-blur-3xl backdrop-saturate-150 rounded-full;
   @apply border border-white/50 dark:border-white/10;
   box-shadow:
-    0 10px 36px rgba(0, 0, 0, 0.12),
-    0 2px 12px rgba(0, 0, 0, 0.08),
-    0 0 0 1px rgba(255, 224, 102, 0.14) inset;
+    0 14px 44px rgba(0, 0, 0, 0.16),
+    0 3px 14px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.22) inset;
   background:
+    /* base pane */
     linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.45),
-      rgba(255, 255, 255, 0.1)
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.16)
     ),
-    rgba(255, 255, 255, 0.28);
+    /* subtle sheen sweep */
+      conic-gradient(
+        from 210deg at 50% 50%,
+        rgba(255, 255, 255, 0) 0deg,
+        rgba(255, 255, 255, 0.1) 40deg,
+        rgba(255, 255, 255, 0) 95deg
+      ),
+    rgba(255, 255, 255, 0.22);
+}
+
+/* Generic glass surfaces */
+.glass-surface {
+  @apply backdrop-blur-3xl backdrop-saturate-150 overflow-hidden;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.65),
+    rgba(255, 255, 255, 0.18)
+  );
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 1rem;
+}
+
+.dark .glass-surface {
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 24, 24, 0.55),
+    rgba(24, 24, 24, 0.22)
+  );
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.glass-card {
+  @apply backdrop-blur-2xl overflow-hidden;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.22)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.16) inset;
+}
+
+.dark .glass-card {
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.55),
+    rgba(26, 26, 26, 0.22)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.32),
+    0 1px 0 rgba(255, 255, 255, 0.06) inset;
+}
+
+/* Smooth reveal */
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal-up {
+  animation: revealUp 600ms ease forwards;
 }
 
 .dark .glass-nav {
   background:
-    linear-gradient(to bottom, rgba(26, 26, 26, 0.42), rgba(26, 26, 26, 0.18)),
-    rgba(18, 18, 18, 0.26);
+    linear-gradient(to bottom, rgba(24, 24, 24, 0.55), rgba(24, 24, 24, 0.2)),
+    conic-gradient(
+      from 210deg at 50% 50%,
+      rgba(255, 255, 255, 0) 0deg,
+      rgba(255, 255, 255, 0.06) 40deg,
+      rgba(255, 255, 255, 0) 95deg
+    ),
+    rgba(18, 18, 18, 0.24);
   box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.42),
-    0 2px 12px rgba(0, 0, 0, 0.18),
-    0 0 0 1px rgba(255, 224, 102, 0.18) inset;
+    0 16px 48px rgba(0, 0, 0, 0.44),
+    0 3px 14px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 
 .glass-nav::before {
@@ -203,14 +284,57 @@ section {
   background:
     radial-gradient(
       120% 60% at 10% -20%,
-      rgba(255, 255, 255, 0.32),
+      rgba(255, 255, 255, 0.38),
       transparent 50%
     ),
     radial-gradient(
       120% 60% at 90% 120%,
-      rgba(255, 224, 102, 0.24),
+      rgba(255, 255, 255, 0.22),
       transparent 55%
     );
+}
+
+/* Animated sheen sweep for the header */
+@keyframes navSheen {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.18;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.glass-nav::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -40%;
+  width: 40%;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 40%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  filter: blur(8px);
+  animation: navSheen 6s ease-in-out infinite;
+}
+
+/* Smooth motion utility */
+.motion-smooth {
+  transition-property: transform, opacity, filter, background-color, box-shadow;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .glass-nav::after {
@@ -306,18 +430,40 @@ section {
 
 .bubble {
   @apply rounded-full backdrop-blur-2xl;
-  /* Clear, glassy bubble: transparent core with a soft specular highlight */
-  background: radial-gradient(
-    120% 120% at 26% 22%,
-    rgba(255, 255, 255, 0.75) 0%,
-    rgba(255, 255, 255, 0.2) 18%,
-    rgba(255, 255, 255, 0) 42%
-  );
+  /* Clear, glassy bubble: highlight + faint rim shadow + bottom refraction + sheen arc */
+  background:
+    /* specular highlight */
+    radial-gradient(
+      120% 120% at 26% 22%,
+      rgba(255, 255, 255, 0.78) 0%,
+      rgba(255, 255, 255, 0.22) 18%,
+      rgba(255, 255, 255, 0) 44%
+    ),
+    /* faint outer shadow for white backgrounds */
+      radial-gradient(
+        farthest-side at 50% 55%,
+        rgba(0, 0, 0, 0.08) 64%,
+        rgba(0, 0, 0, 0) 82%
+      ),
+    /* inner refraction at bottom */
+      radial-gradient(
+        120% 80% at 50% 78%,
+        rgba(0, 0, 0, 0.06) 0%,
+        rgba(0, 0, 0, 0) 60%
+      ),
+    /* subtle sheen arc */
+      conic-gradient(
+        from 210deg at 50% 50%,
+        rgba(255, 255, 255, 0) 0deg,
+        rgba(255, 255, 255, 0.1) 35deg,
+        rgba(255, 255, 255, 0) 85deg,
+        rgba(255, 255, 255, 0) 360deg
+      );
   box-shadow:
     inset 0 1px 3px rgba(255, 255, 255, 0.12),
-    0 10px 28px rgba(0, 0, 0, 0.1);
+    0 16px 40px rgba(0, 0, 0, 0.16);
   animation: bubbleFloat 16s ease-in-out infinite;
-  opacity: 0.58;
+  opacity: 0.66;
   will-change: transform;
 }
 
