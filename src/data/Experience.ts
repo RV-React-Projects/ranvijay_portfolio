@@ -14,7 +14,7 @@ export interface IExperienceItem {
 export const experienceData: IExperienceItem[] = [
   {
     title: 'React Native Developer (Software Developer)',
-    company: 'DXFutureTech 🔗',
+    company: 'DX FutureTech 🔗 ( DX FutureTech India Private Limited )',
     companyURL: 'https://www.dxfuturetech.com/',
     location: 'Bengaluru, Karnataka',
     isCurrent: true,
@@ -61,12 +61,12 @@ export const experienceData: IExperienceItem[] = [
   },
   {
     title: 'Software Developer (Front End Developer)',
-    company: 'Transport Simple 🔗',
+    company: 'Transport Simple 🔗 ( Inderson Services Private Limited )',
     companyURL: 'https://www.transportsimple.com/',
     location: 'Bengaluru, Karnataka',
     isCurrent: false,
-    startDate: '28-Dec-2022',
-    endDate: '14-Oct-2023',
+    startDate: '28-Nov-2022',
+    endDate: '14-Sep-2023',
     responsibilities: [
       'Designed and implemented app infrastructure from scratch, ensuring scalability, modularity, and maintainability.',
       'Developed and deployed cross-platform React Native applications for iOS and Android, enhancing production workflows for timely app releases.',
@@ -101,12 +101,12 @@ export const experienceData: IExperienceItem[] = [
   },
   {
     title: 'Software Developer',
-    company: 'Presto Apps 🔗',
+    company: 'Presto Apps 🔗 ( Palette Arts Private Limited )',
     companyURL: 'https://www.presto-apps.com/',
     location: 'Bengaluru, Karnataka',
     isCurrent: false,
     startDate: '28-Sep-2021',
-    endDate: '28-Dec-2022',
+    endDate: '25-Dec-2022',
     responsibilities: [
       'Led development of cross-platform mobile applications using React Native',
       'Managed multiple live projects, ensuring smooth and timely production releases.',
