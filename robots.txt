@@ -1,0 +1,3 @@
+User-Agent: *
+
+Sitemap: https://rv-react-projects.github.io/ranvijay_portfolio/sitemap.xml
