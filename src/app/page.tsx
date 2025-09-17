@@ -8,8 +8,10 @@ import SkillsSection from '@components/section/Skills';
 
 export default function Home() {
   return (
-    <div>
-      <HeroSection />
+    <div className="space-y-24">
+      <div className="animate-fadeIn">
+        <HeroSection />
+      </div>
       <AboutSection />
       <SkillsSection />
       <ExperienceSection />

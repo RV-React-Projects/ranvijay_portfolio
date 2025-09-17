@@ -1,5 +1,8 @@
+'use client';
+
 import { DribbbleIcon, MailIcon, MapPinIcon } from 'lucide-react';
 import Link from 'next/link';
+import { toast } from 'sonner';
 import { GithubSvg, LinkedInSvg } from '@assets/svgs';
 import { Button } from '@components/ui/button';
 import { Card, CardContent } from '@components/ui/card';
@@ -84,13 +87,48 @@ export default function ContactSection() {
           {/* Form */}
           <Card className="bg-accent shadow-none">
             <CardContent className="p-6 md:p-10">
-              <form>
+              <form
+                onSubmit={async e => {
+                  e.preventDefault();
+                  const form = e.currentTarget as HTMLFormElement;
+                  const data = new FormData(form);
+                  toast.loading('Sending your message...', { id: 'contact' });
+                  try {
+                    const resp = await fetch(
+                      'https://formsubmit.co/ajax/ranvijaychouhan12@gmail.com',
+                      {
+                        method: 'POST',
+                        body: data,
+                      },
+                    );
+                    const json = await resp.json();
+                    if (
+                      resp.ok &&
+                      (json?.success || json?.status === 'success')
+                    ) {
+                      toast.success('Thanks! Your message has been sent.', {
+                        id: 'contact',
+                      });
+                      form.reset();
+                    } else {
+                      throw new Error(json?.message || 'Failed to send');
+                    }
+                  } catch (error) {
+                    toast.error(
+                      'Sorry, something went wrong. Please try again.',
+                      { id: 'contact' },
+                    );
+                  }
+                }}
+                className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-x-8 gap-y-5">
                   <div className="col-span-2 sm:col-span-1">
                     <Label htmlFor="firstName">First Name</Label>
                     <Input
                       placeholder="First name"
                       id="firstName"
+                      name="firstName"
+                      required
                       className="mt-1.5 bg-white h-11 shadow-none"
                     />
                   </div>
@@ -99,6 +137,8 @@ export default function ContactSection() {
                     <Input
                       placeholder="Last name"
                       id="lastName"
+                      name="lastName"
+                      required
                       className="mt-1.5 bg-white h-11 shadow-none"
                     />
                   </div>
@@ -108,6 +148,8 @@ export default function ContactSection() {
                       type="email"
                       placeholder="Email"
                       id="email"
+                      name="email"
+                      required
                       className="mt-1.5 bg-white h-11 shadow-none"
                     />
                   </div>
@@ -115,6 +157,8 @@ export default function ContactSection() {
                     <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
+                      name="message"
+                      required
                       placeholder="Message"
                       className="mt-1.5 bg-white shadow-none"
                       rows={6}
@@ -130,8 +174,22 @@ export default function ContactSection() {
                       .
                     </Label>
                   </div>
+                  {/* Honeypot for spam prevention */}
+                  <input
+                    type="text"
+                    name="_honey"
+                    className="hidden"
+                    aria-hidden="true"
+                  />
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New portfolio contact"
+                  />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
                 </div>
-                <Button className="mt-6 w-full" size="lg">
+                <Button className="mt-6 w-full" size="lg" type="submit">
                   Submit
                 </Button>
               </form>
