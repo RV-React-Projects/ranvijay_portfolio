@@ -38,9 +38,6 @@ const eslintConfig = [
       'import/no-unresolved': [2, { caseSensitive: false }],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
-      'import/no-unresolved': [2, { caseSensitive: false }],
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unused-vars': 'off',
       'react/react-in-jsx-scope': 'off',
       'import/order': [
         'warn',

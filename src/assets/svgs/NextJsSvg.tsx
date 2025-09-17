@@ -6,7 +6,7 @@ export default function NextJsSvg(props: ISvgProps) {
     height = 24,
     width = 24,
     fill = 'none',
-    color = '#000',
+    color = 'currentColor',
     color2 = '#FFF',
     className,
     ...rest
