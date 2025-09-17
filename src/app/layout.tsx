@@ -3,6 +3,7 @@ import { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import Footer from '@components/layout/Footer';
+import GlassyBubbles from '@components/motion-primitives/glassy-bubbles';
 import NavBar from '@components/navbar/navbar';
 import { Toaster } from '@components/ui/sonner';
 import { roboto } from '@configs/Fonts';
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
             enableSystem
             disableTransitionOnChange>
             <NavBar />
+            <GlassyBubbles count={12} />
             {/* <Header /> */}
             <div className="min-h-screen">{children}</div>
             <Toaster position="top-right" richColors closeButton />
